@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Vue注册</title>
-    <url>/2020/05/05/Vue%E6%B3%A8%E5%86%8C/</url>
+    <title>Django REST framework</title>
+    <url>/2020/05/05/Django%20REST%20framework/</url>
     <content><![CDATA[<ul>
-<li><strong>src—&gt;components—&gt;register.vue</strong></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;ue</span><br><span class="line">      &lt;Form&gt;</span><br><span class="line">        &lt;FormItem label=<span class="string">'用户名'</span> icon=<span class="string">'h-icon-user'</span> prop=<span class="string">'username'</span>&gt;</span><br><span class="line">          &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"username"</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/FormItem&gt;</span></span><br><span class="line"><span class="regexp">        &lt;FormItem label='密码' icon='h-icon-lock' prop='password'&gt;</span></span><br><span class="line"><span class="regexp">          &lt;input type="password" v-model="password"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>FormItem&gt;</span><br><span class="line">        &lt;FormItem&gt;</span><br><span class="line">          &lt;Button color=<span class="string">'primary'</span> @click=<span class="string">"register"</span>&gt;注册&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Button @click="reset"&gt;重置&lt;/</span>Button&gt;</span><br><span class="line">          &lt;p&gt;</span><br><span class="line">            已有帐号?<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/login"</span>&gt;</span>去登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">          &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>FormItem&gt;</span><br><span class="line">      &lt;<span class="regexp">/Form&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  data() &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      /</span><span class="regexp">/ 定义表单数据</span></span><br><span class="line"><span class="regexp">      username: '',</span></span><br><span class="line"><span class="regexp">      password: ''</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    register: function() &#123;</span></span><br><span class="line"><span class="regexp">      if (this.username==='' | this.password==='') &#123;</span></span><br><span class="line"><span class="regexp">        this.$Message('请您输入用户名与密码');</span></span><br><span class="line"><span class="regexp">      &#125; else &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 请求后台接口</span></span><br><span class="line"><span class="regexp">        this.axios.get('http:/</span><span class="regexp">/localhost:8000/</span>register/?username=<span class="string">'+this.username+'</span>&amp;password=<span class="string">'+this.password).then((response) =&gt; &#123;</span></span><br><span class="line"><span class="string">        if (response.data.code==200) &#123;</span></span><br><span class="line"><span class="string">          this.$Message(response.data.message);</span></span><br><span class="line"><span class="string">        &#125; else &#123;</span></span><br><span class="line"><span class="string">          this.$Message(response.data.message);          </span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;)</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string">    // 重置</span></span><br><span class="line"><span class="string">    reset: function() &#123;</span></span><br><span class="line"><span class="string">      this.username = '</span><span class="string">';</span></span><br><span class="line"><span class="string">      this.password = '</span><span class="string">';</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;style&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>src—&gt;router—&gt;index.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> register <span class="keyword">from</span> <span class="string">'../components/register'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/register'</span>,</span><br><span class="line">      name: <span class="string">'register'</span>,</span><br><span class="line">      component: register</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<li><p><strong>安装</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install djangorestframework</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>在settings.py添加以下代码</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'rest_framework'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>Vue</category>
+        <category>Django</category>
       </categories>
       <tags>
-        <tag>注册</tag>
+        <tag>配置</tag>
       </tags>
   </entry>
   <entry>
@@ -42,26 +40,6 @@
 ]]></content>
       <categories>
         <category>Axios</category>
-      </categories>
-      <tags>
-        <tag>配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Django REST framework</title>
-    <url>/2020/05/05/Django%20REST%20framework/</url>
-    <content><![CDATA[<ul>
-<li><p><strong>安装</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install djangorestframework</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>在settings.py添加以下代码</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'rest_framework'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Django</category>
       </categories>
       <tags>
         <tag>配置</tag>
@@ -646,6 +624,25 @@ MIDDLEWARE = [
       </tags>
   </entry>
   <entry>
+    <title>Django静态文件配置</title>
+    <url>/2020/05/05/Django%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<ul>
+<li><p><strong>setting.py</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">"static/upload"</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django配置MySQL</title>
     <url>/2020/05/05/Django%E9%85%8D%E7%BD%AEMySQL/</url>
     <content><![CDATA[<h1 id="1、在setting-py中配置"><a href="#1、在setting-py中配置" class="headerlink" title="1、在setting.py中配置"></a>1、在setting.py中配置</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,   <span class="comment"># 数据库引擎</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'4a'</span>,    <span class="comment"># 数据库名</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,  <span class="comment"># 数据库用户名</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">''</span>,  <span class="comment"># 密码</span></span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'localhost'</span>,    <span class="comment"># 主机</span></span><br><span class="line">        <span class="string">'PORT'</span>: <span class="number">3306</span>,    <span class="comment"># 端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -667,25 +664,6 @@ pip install pymysql
 python manage.py migrate</code></pre>
 </li>
 </ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Django</category>
-      </categories>
-      <tags>
-        <tag>配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Django静态文件配置</title>
-    <url>/2020/05/05/Django%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<ul>
-<li><p><strong>setting.py</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">"static/upload"</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-
-
 </li>
 </ul>
 ]]></content>
@@ -792,6 +770,50 @@ npm install less-loader
       </tags>
   </entry>
   <entry>
+    <title>Vue注册</title>
+    <url>/2020/05/05/Vue%E6%B3%A8%E5%86%8C/</url>
+    <content><![CDATA[<ul>
+<li><strong>src—&gt;components—&gt;register.vue</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;ue</span><br><span class="line">      &lt;Form&gt;</span><br><span class="line">        &lt;FormItem label=<span class="string">'用户名'</span> icon=<span class="string">'h-icon-user'</span> prop=<span class="string">'username'</span>&gt;</span><br><span class="line">          &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"username"</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/FormItem&gt;</span></span><br><span class="line"><span class="regexp">        &lt;FormItem label='密码' icon='h-icon-lock' prop='password'&gt;</span></span><br><span class="line"><span class="regexp">          &lt;input type="password" v-model="password"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>FormItem&gt;</span><br><span class="line">        &lt;FormItem&gt;</span><br><span class="line">          &lt;Button color=<span class="string">'primary'</span> @click=<span class="string">"register"</span>&gt;注册&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">          &lt;Button @click="reset"&gt;重置&lt;/</span>Button&gt;</span><br><span class="line">          &lt;p&gt;</span><br><span class="line">            已有帐号?<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/login"</span>&gt;</span>去登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">          &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>FormItem&gt;</span><br><span class="line">      &lt;<span class="regexp">/Form&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  data() &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      /</span><span class="regexp">/ 定义表单数据</span></span><br><span class="line"><span class="regexp">      username: '',</span></span><br><span class="line"><span class="regexp">      password: ''</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    register: function() &#123;</span></span><br><span class="line"><span class="regexp">      if (this.username==='' | this.password==='') &#123;</span></span><br><span class="line"><span class="regexp">        this.$Message('请您输入用户名与密码');</span></span><br><span class="line"><span class="regexp">      &#125; else &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 请求后台接口</span></span><br><span class="line"><span class="regexp">        this.axios.get('http:/</span><span class="regexp">/localhost:8000/</span>register/?username=<span class="string">'+this.username+'</span>&amp;password=<span class="string">'+this.password).then((response) =&gt; &#123;</span></span><br><span class="line"><span class="string">        if (response.data.code==200) &#123;</span></span><br><span class="line"><span class="string">          this.$Message(response.data.message);</span></span><br><span class="line"><span class="string">        &#125; else &#123;</span></span><br><span class="line"><span class="string">          this.$Message(response.data.message);          </span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;)</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string">    // 重置</span></span><br><span class="line"><span class="string">    reset: function() &#123;</span></span><br><span class="line"><span class="string">      this.username = '</span><span class="string">';</span></span><br><span class="line"><span class="string">      this.password = '</span><span class="string">';</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;style&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>src—&gt;router—&gt;index.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> register <span class="keyword">from</span> <span class="string">'../components/register'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/register'</span>,</span><br><span class="line">      name: <span class="string">'register'</span>,</span><br><span class="line">      component: register</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>注册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue登录</title>
+    <url>/2020/05/05/Vue%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<ul>
+<li><strong>src—&gt;components—&gt;login.vue</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;Form&gt;</span><br><span class="line">          &lt;FormItem label=<span class="string">'用户名'</span> icon=<span class="string">'h-icon-user'</span> prop=<span class="string">'username'</span>&gt;</span><br><span class="line">              &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"username"</span>&gt;</span><br><span class="line">          &lt;<span class="regexp">/FormItem&gt;</span></span><br><span class="line"><span class="regexp">          &lt;FormItem label='密码' icon='h-icon-lock' prop='password'&gt;</span></span><br><span class="line"><span class="regexp">              &lt;input type="password" v-model="password"&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>FormItem&gt;</span><br><span class="line">          &lt;FormItem&gt;</span><br><span class="line">              &lt;Button color=<span class="string">'primary'</span> @click=<span class="string">"login"</span>&gt;登录&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">              &lt;Button @click="reset"&gt;重置&lt;/</span>Button&gt;</span><br><span class="line">              &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"a"</span>&gt;没有账号？&lt;a href=<span class="string">"/register"</span>&gt;去注册&lt;<span class="regexp">/a&gt;&lt;/</span>p&gt;</span><br><span class="line">          &lt;<span class="regexp">/FormItem&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Form&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="comment">// 定义表单数据</span></span><br><span class="line">            username: <span class="string">''</span>,</span><br><span class="line">            password: <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        login: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 请求后台接口</span></span><br><span class="line">            <span class="keyword">this</span>.axios.get(<span class="string">'http://localhost:8000/login/?username='</span>+<span class="keyword">this</span>.username+<span class="string">'&amp;password='</span>+<span class="keyword">this</span>.password).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (response.data.code===<span class="number">200</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$Message(response.data.message);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$Message(response.data.message);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 重置</span></span><br><span class="line">        reset: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.username = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">this</span>.password = <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>src—&gt;router—&gt;index.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">'../components/login'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/login'</span>,</span><br><span class="line">      name: <span class="string">'login'</span>,</span><br><span class="line">      component: login</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>登录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm设置淘宝源</title>
     <url>/2020/05/05/npm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E6%BA%90/</url>
     <content><![CDATA[<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
@@ -815,28 +837,6 @@ npm install less-loader
       </categories>
       <tags>
         <tag>设置源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue登录</title>
-    <url>/2020/05/05/Vue%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<ul>
-<li><strong>src—&gt;components—&gt;login.vue</strong></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      &lt;Form&gt;</span><br><span class="line">          &lt;FormItem label=<span class="string">'用户名'</span> icon=<span class="string">'h-icon-user'</span> prop=<span class="string">'username'</span>&gt;</span><br><span class="line">              &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"username"</span>&gt;</span><br><span class="line">          &lt;<span class="regexp">/FormItem&gt;</span></span><br><span class="line"><span class="regexp">          &lt;FormItem label='密码' icon='h-icon-lock' prop='password'&gt;</span></span><br><span class="line"><span class="regexp">              &lt;input type="password" v-model="password"&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>FormItem&gt;</span><br><span class="line">          &lt;FormItem&gt;</span><br><span class="line">              &lt;Button color=<span class="string">'primary'</span> @click=<span class="string">"login"</span>&gt;登录&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">              &lt;Button @click="reset"&gt;重置&lt;/</span>Button&gt;</span><br><span class="line">              &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"a"</span>&gt;没有账号？&lt;a href=<span class="string">"/register"</span>&gt;去注册&lt;<span class="regexp">/a&gt;&lt;/</span>p&gt;</span><br><span class="line">          &lt;<span class="regexp">/FormItem&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Form&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="comment">// 定义表单数据</span></span><br><span class="line">            username: <span class="string">''</span>,</span><br><span class="line">            password: <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        login: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 请求后台接口</span></span><br><span class="line">            <span class="keyword">this</span>.axios.get(<span class="string">'http://localhost:8000/login/?username='</span>+<span class="keyword">this</span>.username+<span class="string">'&amp;password='</span>+<span class="keyword">this</span>.password).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (response.data.code===<span class="number">200</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$Message(response.data.message);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$Message(response.data.message);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 重置</span></span><br><span class="line">        reset: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.username = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">this</span>.password = <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>src—&gt;router—&gt;index.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">'../components/login'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/login'</span>,</span><br><span class="line">      name: <span class="string">'login'</span>,</span><br><span class="line">      component: login</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>登录</tag>
       </tags>
   </entry>
 </search>
