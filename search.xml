@@ -788,7 +788,7 @@ npm install less-loader
         <category>Vue</category>
       </categories>
       <tags>
-        <tag>Vue注册</tag>
+        <tag>注册</tag>
       </tags>
   </entry>
   <entry>
@@ -810,7 +810,7 @@ npm install less-loader
         <category>Vue</category>
       </categories>
       <tags>
-        <tag>Vue登录</tag>
+        <tag>登录</tag>
       </tags>
   </entry>
   <entry>
