@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>Django REST framework</title>
-    <url>/2020/05/05/Django%20REST%20framework/</url>
-    <content><![CDATA[<ul>
+    <url>/2020/05/06/Django%20REST%20framework/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
 <li><p><strong>安装</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install djangorestframework</span><br></pre></td></tr></table></figure>
 </li>
@@ -22,8 +22,8 @@
   </entry>
   <entry>
     <title>Axios配置Vue</title>
-    <url>/2020/05/05/Axios%E9%85%8D%E7%BD%AEVue/</url>
-    <content><![CDATA[<ul>
+    <url>/2020/05/06/Axios%E9%85%8D%E7%BD%AEVue/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
 <li><p><strong>首先在项目根目录执行以下代码安装</strong></p>
 <ul>
 <li><pre><code class="javascript">npm install axios
@@ -542,8 +542,8 @@
   </entry>
   <entry>
     <title>Django注册</title>
-    <url>/2020/05/05/Django%E6%B3%A8%E5%86%8C/</url>
-    <content><![CDATA[<ul>
+    <url>/2020/05/06/Django%E6%B3%A8%E5%86%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
 <li><strong>models.py</strong></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用户表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="comment"># 用户名</span></span><br><span class="line">    username = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    <span class="comment"># 密码</span></span><br><span class="line">    password = models.CharField(max_length=<span class="number">128</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 生命表明</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">'user'</span></span><br></pre></td></tr></table></figure>
@@ -570,8 +570,8 @@
   </entry>
   <entry>
     <title>Django登录</title>
-    <url>/2020/05/05/Django%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<ul>
+    <url>/2020/05/06/Django%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
 <li><p><strong>views.py</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 登录接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Login</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="comment"># 接收参数</span></span><br><span class="line">        username = request.GET.get(<span class="string">'username'</span>, <span class="literal">None</span>)</span><br><span class="line">        password = request.GET.get(<span class="string">'password'</span>, <span class="literal">None</span>)</span><br><span class="line">        <span class="comment"># 查询数据</span></span><br><span class="line">        user = User.objects.filter(username=username, password=password_encrypt(password)).first()</span><br><span class="line">        <span class="keyword">if</span> user:</span><br><span class="line">            <span class="keyword">return</span> Response(&#123;</span><br><span class="line">                <span class="string">'code'</span>: <span class="number">200</span>,</span><br><span class="line">                <span class="string">'message'</span>: <span class="string">'登录成功'</span>,</span><br><span class="line">            &#125;)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(&#123;</span><br><span class="line">                <span class="string">'code'</span>: <span class="number">403</span>,</span><br><span class="line">                <span class="string">'message'</span>: <span class="string">'您的用户名或密码不正确'</span></span><br><span class="line">            &#125;)</span><br></pre></td></tr></table></figure>
 </li>
@@ -590,37 +590,27 @@
   </entry>
   <entry>
     <title>Django跨域</title>
-    <url>/2020/05/05/Django%E8%B7%A8%E5%9F%9F/</url>
-    <content><![CDATA[<ul>
-<li><p><strong>安装django-core-headers</strong></p>
+    <url>/2020/05/06/Django%E8%B7%A8%E5%9F%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li><strong>安装django-core-headers</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install django-cors-headers</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><pre><code class="python">pip install django-cors-headers
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">- **配置settings.py**</span><br><span class="line"></span><br><span class="line">  - &#96;&#96;&#96;python</span><br><span class="line">     INSTALLED_APPS &#x3D; [</span><br><span class="line">        &#39;corsheaders&#39;,</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure></code></pre>
-</li>
-<li><pre><code class="python"><span class="comment"># 必须按顺序添加</span>
-MIDDLEWARE = [
-    <span class="string">'django.middleware.security.SecurityMiddleware'</span>,
-    <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,
-    <span class="string">'corsheaders.middleware.CorsMiddleware'</span>,    <span class="comment"># 在这里添加</span>
-    <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,
-<span class="string">'django.middleware.common.CommonMiddleware'</span>,
-    <span class="comment"># 'django.middleware.csrf.CsrfViewMiddleware',</span>
-    <span class="string">'django.contrib.auth.middleware.AuthenticationMiddleware'</span>,
-    <span class="string">'django.contrib.messages.middleware.MessageMiddleware'</span>,
-    <span class="string">'django.middleware.clickjacking.XFrameOptionsMiddleware'</span>,
-]
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">- &#96;&#96;&#96;python</span><br><span class="line">  # 允许跨域访问的域名</span><br><span class="line">  CORS_ORIGIN_ALLOW_ALL &#x3D; True</span><br><span class="line">  # 允许携带cookie</span><br><span class="line">CORS_ALLOW_CREDENTIALS &#x3D; True</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
+<li><strong>配置settings.py</strong></li>
 </ul>
-</li>
-</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'corsheaders'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">  <span class="comment"># 必须按顺序添加</span></span><br><span class="line">  MIDDLEWARE = [</span><br><span class="line">      <span class="string">'django.middleware.security.SecurityMiddleware'</span>,</span><br><span class="line">      <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,</span><br><span class="line">      <span class="string">'corsheaders.middleware.CorsMiddleware'</span>,	<span class="comment"># 在这里添加</span></span><br><span class="line">      <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,</span><br><span class="line">  <span class="string">'django.middleware.common.CommonMiddleware'</span>,</span><br><span class="line">      <span class="comment"># 'django.middleware.csrf.CsrfViewMiddleware',</span></span><br><span class="line">      <span class="string">'django.contrib.auth.middleware.AuthenticationMiddleware'</span>,</span><br><span class="line">      <span class="string">'django.contrib.messages.middleware.MessageMiddleware'</span>,</span><br><span class="line">      <span class="string">'django.middleware.clickjacking.XFrameOptionsMiddleware'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 允许跨域访问的域名</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 允许携带cookie</span></span><br><span class="line">CORS_ALLOW_CREDENTIALS = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Django</category>
       </categories>
       <tags>
-        <tag>跨域</tag>
+        <tag>配置</tag>
       </tags>
   </entry>
   <entry>
@@ -639,13 +629,13 @@ MIDDLEWARE = [
         <category>Django</category>
       </categories>
       <tags>
-        <tag>静态文件</tag>
+        <tag>配置</tag>
       </tags>
   </entry>
   <entry>
     <title>Django配置MySQL</title>
-    <url>/2020/05/05/Django%E9%85%8D%E7%BD%AEMySQL/</url>
-    <content><![CDATA[<h1 id="1、在setting-py中配置"><a href="#1、在setting-py中配置" class="headerlink" title="1、在setting.py中配置"></a>1、在setting.py中配置</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,   <span class="comment"># 数据库引擎</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'4a'</span>,    <span class="comment"># 数据库名</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,  <span class="comment"># 数据库用户名</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">''</span>,  <span class="comment"># 密码</span></span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'localhost'</span>,    <span class="comment"># 主机</span></span><br><span class="line">        <span class="string">'PORT'</span>: <span class="number">3306</span>,    <span class="comment"># 端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <url>/2020/05/06/Django%E9%85%8D%E7%BD%AEMySQL/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1、在setting-py中配置"><a href="#1、在setting-py中配置" class="headerlink" title="1、在setting.py中配置"></a>1、在setting.py中配置</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,   <span class="comment"># 数据库引擎</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'4a'</span>,    <span class="comment"># 数据库名</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,  <span class="comment"># 数据库用户名</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">''</span>,  <span class="comment"># 密码</span></span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'localhost'</span>,    <span class="comment"># 主机</span></span><br><span class="line">        <span class="string">'PORT'</span>: <span class="number">3306</span>,    <span class="comment"># 端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -676,8 +666,8 @@ python manage.py migrate</code></pre>
   </entry>
   <entry>
     <title>HEXO首次部署Git</title>
-    <url>/2020/05/05/HEXO%E9%A6%96%E6%AC%A1%E9%83%A8%E7%BD%B2Git/</url>
-    <content><![CDATA[<ul>
+    <url>/2020/05/06/HEXO%E9%A6%96%E6%AC%A1%E9%83%A8%E7%BD%B2Git/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
 <li><p><strong>安装</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
@@ -688,13 +678,13 @@ python manage.py migrate</code></pre>
         <category>HEXO</category>
       </categories>
       <tags>
-        <tag>部署</tag>
+        <tag>HEXO部署</tag>
       </tags>
   </entry>
   <entry>
     <title>HeyUI配置Vue</title>
-    <url>/2020/05/05/HeyUI%E9%85%8D%E7%BD%AEVue/</url>
-    <content><![CDATA[<ul>
+    <url>/2020/05/06/HeyUI%E9%85%8D%E7%BD%AEVue/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
 <li><p><strong>首先在项目根目录执行以下代码</strong></p>
 <ul>
 <li><pre><code class="javascript">npm install heyui
@@ -720,8 +710,8 @@ npm install less-loader
   </entry>
   <entry>
     <title>MySQL自动启动本地服务</title>
-    <url>/2020/05/05/MySQL%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</url>
-    <content><![CDATA[<p>tags: </p>
+    <url>/2020/05/06/MySQL%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>tags: </p>
 <ul>
 <li>服务自启<br>categories: </li>
 <li>MySQL</li>
@@ -740,7 +730,7 @@ npm install less-loader
         <category>MySql</category>
       </categories>
       <tags>
-        <tag>自启服务</tag>
+        <tag>自启本地服务</tag>
       </tags>
   </entry>
   <entry>
@@ -789,8 +779,8 @@ npm install less-loader
   </entry>
   <entry>
     <title>pip设置国内源</title>
-    <url>/2020/05/05/pip%E8%AE%BE%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url&#x3D;http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;</span><br><span class="line">[install]</span><br><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+    <url>/2020/05/06/pip%E8%AE%BE%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url&#x3D;http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;</span><br><span class="line">[install]</span><br><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -802,8 +792,8 @@ npm install less-loader
   </entry>
   <entry>
     <title>npm设置淘宝源</title>
-    <url>/2020/05/05/npm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E6%BA%90/</url>
-    <content><![CDATA[<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+    <url>/2020/05/06/npm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E6%BA%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -991,113 +981,6 @@ npm install less-loader
       </categories>
       <tags>
         <tag>初识python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux命令</title>
-    <url>/2020/05/10/linux%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="常用命令及技巧"><a href="#常用命令及技巧" class="headerlink" title="常用命令及技巧"></a><strong>常用命令及技巧</strong></h1><h3 id="一、通用命令"><a href="#一、通用命令" class="headerlink" title="一、通用命令"></a><strong>一、通用命令</strong></h3><ul>
-<li><strong>date：打印或者设置系统的日期和时间</strong></li>
-<li><strong>stty -a：可以查看或者打印控制字符（Ctrl-C、Ctrl-D、Ctrl-Z等）</strong></li>
-<li><strong>passwd：用passwd -h查看</strong></li>
-<li><strong>logout，login： 登录shell的登录和注销命令</strong></li>
-<li><strong>more，less，head tail：显示或部分显示文件内容</strong></li>
-<li><strong>lp/lpstat/cancel， lpr/lpq/lprm： 打印文件</strong></li>
-<li><strong>chmod u+x：更改文件权限</strong></li>
-<li><strong>rm -fr dir：删除非空目录</strong></li>
-<li><strong>cp -R dir：拷贝目录</strong></li>
-<li><strong>fg jobid ：可以将一个后台进程放到前台</strong></li>
-<li><strong>kill 的作用： send a signal to a process、 eg： kill -9 发送的是SIG_KILL信号，具体发送什么信号 可以通过 man kill 查看</strong></li>
-<li><strong>ps 的用法， ps -e 或 ps -o pid，ppid，session，tpgid， comm (其中session显示的sessionid， tpgid显示前台进程组id， comm显示命令名称)</strong></li>
-</ul>
-<h3 id="二、Ubuntu常用命令"><a href="#二、Ubuntu常用命令" class="headerlink" title="二、Ubuntu常用命令"></a>二、Ubuntu常用命令</h3><ul>
-<li><strong>dpkg： package manager for Debian</strong></li>
-<li><strong>安装： dpkg -i package</strong></li>
-<li><strong>卸载： dpkg -r package</strong></li>
-<li><strong>卸载并删除配置文件： dpkg -P |–purge package</strong></li>
-<li><strong>如果安装一个包时、说依赖某些库、 可以先 apt-get install somelib</strong></li>
-<li><strong>查看软件包安装内容 ：dpkg -L package</strong></li>
-<li><strong>查看文件由哪个软件包提供： dpkg -S filename</strong></li>
-<li><strong>另外 dpkg还有 dselect和aptitude 两个frontend</strong></li>
-<li><strong>安装： apt-get install packs</strong></li>
-<li><strong>更新源：apt-get update</strong></li>
-<li><strong>升级系统：apt-get upgrade</strong></li>
-<li><strong>智能升级、安装新软件包，删除废弃的软件包：apt-get dist-upgrade</strong></li>
-<li><strong>f –fix broken 修复依赖：apt-get -f install</strong></li>
-<li><strong>自动删除无用的软件：apt-get autoremove</strong></li>
-<li><strong>删除软件：apt-get remove packages</strong></li>
-<li><strong>删除包并清除配置文件：apt-get remove package –purge</strong></li>
-<li><strong>清除所以删除包的残余配置文件： dpkg -l |grep ^rc|awk ‘{print $2}’ |tr [“/n”] [“ “]|sudo xargs dpkg -P</strong></li>
-<li><strong>安装软件时候包的临时存放目录 ： /var/cache/apt/archives</strong></li>
-<li><strong>清除该目录： apt-get clean</strong></li>
-<li><strong>清除该目录的旧版本的软件缓存： apt-get autoclean</strong></li>
-<li><strong>查询软件some的依赖包： apt-cache depends some</strong></li>
-<li><strong>查询软件some被哪些包依赖： apt-get rdepends some</strong></li>
-<li><strong>搜索软件： apt-cache search name|regexp</strong></li>
-<li><strong>查看软件包的作用：apt-cache show package</strong></li>
-<li><strong>查看一个软件的编译依赖库： apt-cache showsrc packagename|grep Build-Depends</strong></li>
-<li><strong>下载软件的源代码 ： apt-get source packagename (注： sources、list 中应该有 deb-src 源)</strong></li>
-<li><strong>安装软件包源码的同时， 安装其编译环境 ：apt-get build-dep packagename (有deb-src源)</strong></li>
-<li><strong>如何将本地光盘加入安装源列表： apt-cdrom add</strong></li>
-<li><strong>查看内核版本：uname -a</strong></li>
-<li><strong>查看ubuntu 版本：cat /etc/issue</strong></li>
-<li><strong>查看网卡状态 ：ethtool eth0</strong></li>
-<li><strong>查看内存，cpu的信息：cat /proc/meminfo ; cat /proc/cpuinfo</strong></li>
-<li><strong>打印文件系统空间使用情况：df -h</strong></li>
-<li><strong>查看硬盘分区情况：fdisk</strong></li>
-<li><strong>产看文件大小：du -h filename;</strong></li>
-<li><strong>查看目录大小：du -hs dirname ; du -h dirname是查看目录下所有文件的大小</strong></li>
-<li><strong>查看内存的使用：free -m/-g/-k</strong></li>
-<li><strong>查看进程：ps -e 或ps -aux –&gt;显示用户</strong></li>
-<li><strong>杀掉进程：kill pid</strong></li>
-<li><strong>强制杀掉：killall -9 processname</strong></li>
-<li><strong>配置 ADSL： sudo pppoeconf</strong></li>
-<li><strong>ADSL手工拨号： sudo pon dsl-provider</strong></li>
-<li><strong>激活 ADSL ： sudo /etc/ppp/pppoe_on_boot</strong></li>
-<li><strong>断开 ADSL： sudo poff</strong></li>
-<li><strong>根据IP查网卡地址： arping IP地址</strong></li>
-<li><strong>产看本地网络信息（包括ip等）： ifconfig | ifconfig eth0</strong></li>
-<li><strong>查看路由信息： netstat -r</strong></li>
-<li><strong>关闭网卡： sudo ifconfig eth0 down</strong></li>
-<li><strong>启用网卡： sudo ifconfig eth0 up</strong></li>
-<li><strong>添加一个服务： sudo update-rc、d 服务名 defaults 99</strong></li>
-<li><strong>删除一个服务： sudo update-rc、d 服务名 remove</strong></li>
-<li><strong>临时重启一个服务： /etc/init、d/服务名 restart</strong></li>
-<li><strong>临时关闭一个服务： /etc/init、d/服务名 stop</strong></li>
-<li><strong>临时启动一个服务： /etc/init、d/服务名 start</strong></li>
-<li><strong>控制台下显示中文： sudo apt-get install zhcon</strong></li>
-<li><strong>查找某个文件： whereis filename 或 find 目录 -name 文件名</strong></li>
-<li><strong>解压缩 a、tar、gz： tar zxvf a、tar、gz</strong></li>
-<li><strong>解压缩 a、tar、bz2： tar jxvf a、tar、bz2</strong></li>
-<li><strong>压缩aaa bbb目录为xxx、tar、gz： tar zcvf xxx、tar、gz aaa bbb</strong></li>
-<li><strong>压缩aaa bbb目录为xxx、tar、bz2： tar jcvf xxx、tar、bz2 aaa bbb</strong></li>
-<li><strong>computer：/// - 全部挂载的设备和网络</strong></li>
-<li><strong>network：/// - 浏览可用的网络</strong></li>
-<li><strong>burn：/// - 一个刻录 CDs/DVDs 的数据虚拟目录</strong></li>
-<li><strong>smb：/// - 可用的 windows/samba 网络资源</strong></li>
-<li><strong>x-nautilus-desktop：/// - 桌面项目和图标</strong></li>
-<li><strong>file：/// - 本地文件</strong></li>
-<li><strong>trash：/// - 本地回收站目录</strong></li>
-<li><strong>ftp：// - FTP 文件夹</strong></li>
-<li><strong>ssh：// - SSH 文件夹</strong></li>
-<li><strong>fonts：/// - 字体文件夹，可将字体文件拖到此处以完成安装</strong></li>
-<li><strong>themes：/// - 系统主题文件夹</strong></li>
-<li><strong>查看本地所有的tpc，udp监听端口： netstat -tupln (t=tcp， u=udp， p=program， l=listen， n=numric)</strong></li>
-<li><strong>通过man搜说相关命令： man -k keyword 、 eg： man -k user</strong></li>
-<li><strong>统计文件所占用的实际磁盘空间： du (du - estimate file space usage)</strong></li>
-<li><strong>统计文件中的字符，字节数： wc -c/-l/-w (wc - print the number of newlines， words， and bytes in files)</strong></li>
-<li><strong>快速重启X服务： 同时按下： Alt + Ctrl + Backspace 三个键</strong></li>
-<li><strong>打开”运行”窗口： 同时按下 Alt + F2 键</strong></li>
-<li><strong>全屏：直接按下 PrtScr 键</strong></li>
-<li><strong>当前窗口：同时按下 Alt + PrtScr 键</strong></li>
-<li><strong>延时截屏：在 终端 或 “运行”窗口中输入命令： gnome-screenshot –delay 3 ，将延时 3 秒后截屏</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -1314,6 +1197,12 @@ npm install less-loader
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      上传图片：&lt;input type=<span class="string">"file"</span> @change=<span class="string">"upload"</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 自定义方法</span></span><br><span class="line">    methods: &#123;</span><br><span class="line">        <span class="comment">// 定义提交事件</span></span><br><span class="line">        upload(e) &#123;</span><br><span class="line">            <span class="comment">// 获取文件</span></span><br><span class="line">            <span class="keyword">let</span> file = e.target.files[<span class="number">0</span>];</span><br><span class="line">            <span class="comment">// 生命表单参数</span></span><br><span class="line">            <span class="keyword">let</span> param = <span class="keyword">new</span> FormData();</span><br><span class="line">            param.append(<span class="string">'img'</span>, file);</span><br><span class="line">            <span class="comment">// 声明请求头</span></span><br><span class="line">            <span class="keyword">let</span> config = &#123;</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    <span class="string">'Content-Type'</span>: <span class="string">'multipart/form-data'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 请求后台接口</span></span><br><span class="line">            <span class="keyword">this</span>.axios.post(<span class="string">'http://localhost:8000/upload/'</span>,param, config).then(<span class="function"><span class="params">response</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(response);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>上传文件</tag>
+      </tags>
   </entry>
   <entry>
     <title>Djnago反序例化</title>
@@ -1332,6 +1221,12 @@ npm install less-loader
     <title>Vue上传文件（方法二）</title>
     <url>/2020/05/11/Vue%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%88%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      上传图片：&lt;input type=<span class="string">"file"</span> id=<span class="string">"img"</span>&gt;</span><br><span class="line">      &lt;button @click=<span class="string">"submit"</span>&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">    data() &#123;</span></span><br><span class="line"><span class="regexp">        return &#123;</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 自定义方法</span></span><br><span class="line"><span class="regexp">    methods: &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义提交事件</span></span><br><span class="line"><span class="regexp">        submit() &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 实例化对象</span></span><br><span class="line"><span class="regexp">            var formdata = new FormData();</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 获取输入框id</span></span><br><span class="line"><span class="regexp">            let img = document.getElementById('img').files[0];</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 'img'与数据库字段一致 文件实体</span></span><br><span class="line"><span class="regexp">            formdata.append('img', img);</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 请求后台接口</span></span><br><span class="line"><span class="regexp">            this.axios.post('http:/</span><span class="regexp">/localhost:8000/u</span>pload/<span class="string">', (formdata)).then(response=&gt;&#123;</span></span><br><span class="line"><span class="string">                // 打印控制台</span></span><br><span class="line"><span class="string">                console.log(response);</span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;style&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>上传文件</tag>
+      </tags>
   </entry>
   <entry>
     <title>Django分页</title>
@@ -1379,10 +1274,10 @@ npm install less-loader
 
 ]]></content>
       <categories>
-        <category>MD5</category>
+        <category>Django</category>
       </categories>
       <tags>
-        <tag>加密</tag>
+        <tag>MD5加密</tag>
       </tags>
   </entry>
   <entry>
@@ -1414,6 +1309,136 @@ npm install less-loader
       </categories>
       <tags>
         <tag>国际化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue+HeyUI实现分页</title>
+    <url>/2020/05/12/Vue+HeyUI%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A1%B5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li><p><strong>俗话说：“人看衣服、马看鞍”，网站也是如此，一个网站如果没有华丽的外表，那么就很少吸引眼球，接着用到非常美观的HeyUI框架结合Vue来实现分页</strong></p>
+</li>
+<li><p><strong>首先是配置，在本站找即可</strong></p>
+</li>
+<li><p><strong>多了不说，少了不唠。代码如下：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div align=<span class="string">'center'</span>&gt;</span><br><span class="line">      &lt;Table :datas=<span class="string">'datas'</span> v-width=<span class="string">'400'</span>&gt;</span><br><span class="line">          &lt;TableItem title=<span class="string">"序号"</span> prop=<span class="string">'id'</span>&gt;&lt;<span class="regexp">/TableItem&gt;</span></span><br><span class="line"><span class="regexp">          &lt;TableItem title="书名" prop='name'&gt;&lt;/</span>TableItem&gt;</span><br><span class="line">      &lt;<span class="regexp">/Table&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Pagination v-model="pagination" align="center" @change="Change"&gt;&lt;/</span>Pagination&gt;</span><br><span class="line">      &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">    data() &#123;</span></span><br><span class="line"><span class="regexp">        return &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 定义空列表，渲染后端数据</span></span><br><span class="line"><span class="regexp">            datas: [],</span></span><br><span class="line"><span class="regexp">            pagination: &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 当前页</span></span><br><span class="line"><span class="regexp">                page: 1,</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 每页条数</span></span><br><span class="line"><span class="regexp">                size: 1,</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ 总条数</span></span><br><span class="line"><span class="regexp">                total: null</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    mounted() &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 调用方法</span></span><br><span class="line"><span class="regexp">        this.Change();</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 自定义方法</span></span><br><span class="line"><span class="regexp">    methods: &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 提交事件</span></span><br><span class="line"><span class="regexp">        Change() &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 请求后台接口并传参</span></span><br><span class="line"><span class="regexp">            this.axios.get('http:/</span><span class="regexp">/localhost:8000/</span>books/?page=<span class="string">'+parseInt(this.pagination.page)+'</span>&amp;size=<span class="string">'+parseInt(this.pagination.size)).then((result) =&gt; &#123;</span></span><br><span class="line"><span class="string">                // 赋值</span></span><br><span class="line"><span class="string">                this.datas = result.data.data;</span></span><br><span class="line"><span class="string">                this.pagination.total = result.data.total;</span></span><br><span class="line"><span class="string">                // 打印控制台</span></span><br><span class="line"><span class="string">                console.log(result);</span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vue+HeyUI</category>
+      </categories>
+      <tags>
+        <tag>分页</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux命令</title>
+    <url>/2020/05/10/Linux%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="常用命令及技巧"><a href="#常用命令及技巧" class="headerlink" title="常用命令及技巧"></a><strong>常用命令及技巧</strong></h1><h3 id="一、通用命令"><a href="#一、通用命令" class="headerlink" title="一、通用命令"></a><strong>一、通用命令</strong></h3><ul>
+<li><strong>date：打印或者设置系统的日期和时间</strong></li>
+<li><strong>stty -a：可以查看或者打印控制字符（Ctrl-C、Ctrl-D、Ctrl-Z等）</strong></li>
+<li><strong>passwd：用passwd -h查看</strong></li>
+<li><strong>logout，login： 登录shell的登录和注销命令</strong></li>
+<li><strong>more，less，head tail：显示或部分显示文件内容</strong></li>
+<li><strong>lp/lpstat/cancel， lpr/lpq/lprm： 打印文件</strong></li>
+<li><strong>chmod u+x：更改文件权限</strong></li>
+<li><strong>rm -fr dir：删除非空目录</strong></li>
+<li><strong>cp -R dir：拷贝目录</strong></li>
+<li><strong>fg jobid ：可以将一个后台进程放到前台</strong></li>
+<li><strong>kill 的作用： send a signal to a process、 eg： kill -9 发送的是SIG_KILL信号，具体发送什么信号 可以通过 man kill 查看</strong></li>
+<li><strong>ps 的用法， ps -e 或 ps -o pid，ppid，session，tpgid， comm (其中session显示的sessionid， tpgid显示前台进程组id， comm显示命令名称)</strong></li>
+</ul>
+<h3 id="二、Ubuntu常用命令"><a href="#二、Ubuntu常用命令" class="headerlink" title="二、Ubuntu常用命令"></a>二、Ubuntu常用命令</h3><ul>
+<li><strong>dpkg： package manager for Debian</strong></li>
+<li><strong>安装： dpkg -i package</strong></li>
+<li><strong>卸载： dpkg -r package</strong></li>
+<li><strong>卸载并删除配置文件： dpkg -P |–purge package</strong></li>
+<li><strong>如果安装一个包时、说依赖某些库、 可以先 apt-get install somelib</strong></li>
+<li><strong>查看软件包安装内容 ：dpkg -L package</strong></li>
+<li><strong>查看文件由哪个软件包提供： dpkg -S filename</strong></li>
+<li><strong>另外 dpkg还有 dselect和aptitude 两个frontend</strong></li>
+<li><strong>安装： apt-get install packs</strong></li>
+<li><strong>更新源：apt-get update</strong></li>
+<li><strong>升级系统：apt-get upgrade</strong></li>
+<li><strong>智能升级、安装新软件包，删除废弃的软件包：apt-get dist-upgrade</strong></li>
+<li><strong>f –fix broken 修复依赖：apt-get -f install</strong></li>
+<li><strong>自动删除无用的软件：apt-get autoremove</strong></li>
+<li><strong>删除软件：apt-get remove packages</strong></li>
+<li><strong>删除包并清除配置文件：apt-get remove package –purge</strong></li>
+<li><strong>清除所以删除包的残余配置文件： dpkg -l |grep ^rc|awk ‘{print $2}’ |tr [“/n”] [“ “]|sudo xargs dpkg -P</strong></li>
+<li><strong>安装软件时候包的临时存放目录 ： /var/cache/apt/archives</strong></li>
+<li><strong>清除该目录： apt-get clean</strong></li>
+<li><strong>清除该目录的旧版本的软件缓存： apt-get autoclean</strong></li>
+<li><strong>查询软件some的依赖包： apt-cache depends some</strong></li>
+<li><strong>查询软件some被哪些包依赖： apt-get rdepends some</strong></li>
+<li><strong>搜索软件： apt-cache search name|regexp</strong></li>
+<li><strong>查看软件包的作用：apt-cache show package</strong></li>
+<li><strong>查看一个软件的编译依赖库： apt-cache showsrc packagename|grep Build-Depends</strong></li>
+<li><strong>下载软件的源代码 ： apt-get source packagename (注： sources、list 中应该有 deb-src 源)</strong></li>
+<li><strong>安装软件包源码的同时， 安装其编译环境 ：apt-get build-dep packagename (有deb-src源)</strong></li>
+<li><strong>如何将本地光盘加入安装源列表： apt-cdrom add</strong></li>
+<li><strong>查看内核版本：uname -a</strong></li>
+<li><strong>查看ubuntu 版本：cat /etc/issue</strong></li>
+<li><strong>查看网卡状态 ：ethtool eth0</strong></li>
+<li><strong>查看内存，cpu的信息：cat /proc/meminfo ; cat /proc/cpuinfo</strong></li>
+<li><strong>打印文件系统空间使用情况：df -h</strong></li>
+<li><strong>查看硬盘分区情况：fdisk</strong></li>
+<li><strong>产看文件大小：du -h filename;</strong></li>
+<li><strong>查看目录大小：du -hs dirname ; du -h dirname是查看目录下所有文件的大小</strong></li>
+<li><strong>查看内存的使用：free -m/-g/-k</strong></li>
+<li><strong>查看进程：ps -e 或ps -aux –&gt;显示用户</strong></li>
+<li><strong>杀掉进程：kill pid</strong></li>
+<li><strong>强制杀掉：killall -9 processname</strong></li>
+<li><strong>配置 ADSL： sudo pppoeconf</strong></li>
+<li><strong>ADSL手工拨号： sudo pon dsl-provider</strong></li>
+<li><strong>激活 ADSL ： sudo /etc/ppp/pppoe_on_boot</strong></li>
+<li><strong>断开 ADSL： sudo poff</strong></li>
+<li><strong>根据IP查网卡地址： arping IP地址</strong></li>
+<li><strong>产看本地网络信息（包括ip等）： ifconfig | ifconfig eth0</strong></li>
+<li><strong>查看路由信息： netstat -r</strong></li>
+<li><strong>关闭网卡： sudo ifconfig eth0 down</strong></li>
+<li><strong>启用网卡： sudo ifconfig eth0 up</strong></li>
+<li><strong>添加一个服务： sudo update-rc、d 服务名 defaults 99</strong></li>
+<li><strong>删除一个服务： sudo update-rc、d 服务名 remove</strong></li>
+<li><strong>临时重启一个服务： /etc/init、d/服务名 restart</strong></li>
+<li><strong>临时关闭一个服务： /etc/init、d/服务名 stop</strong></li>
+<li><strong>临时启动一个服务： /etc/init、d/服务名 start</strong></li>
+<li><strong>控制台下显示中文： sudo apt-get install zhcon</strong></li>
+<li><strong>查找某个文件： whereis filename 或 find 目录 -name 文件名</strong></li>
+<li><strong>解压缩 a、tar、gz： tar zxvf a、tar、gz</strong></li>
+<li><strong>解压缩 a、tar、bz2： tar jxvf a、tar、bz2</strong></li>
+<li><strong>压缩aaa bbb目录为xxx、tar、gz： tar zcvf xxx、tar、gz aaa bbb</strong></li>
+<li><strong>压缩aaa bbb目录为xxx、tar、bz2： tar jcvf xxx、tar、bz2 aaa bbb</strong></li>
+<li><strong>computer：/// - 全部挂载的设备和网络</strong></li>
+<li><strong>network：/// - 浏览可用的网络</strong></li>
+<li><strong>burn：/// - 一个刻录 CDs/DVDs 的数据虚拟目录</strong></li>
+<li><strong>smb：/// - 可用的 windows/samba 网络资源</strong></li>
+<li><strong>x-nautilus-desktop：/// - 桌面项目和图标</strong></li>
+<li><strong>file：/// - 本地文件</strong></li>
+<li><strong>trash：/// - 本地回收站目录</strong></li>
+<li><strong>ftp：// - FTP 文件夹</strong></li>
+<li><strong>ssh：// - SSH 文件夹</strong></li>
+<li><strong>fonts：/// - 字体文件夹，可将字体文件拖到此处以完成安装</strong></li>
+<li><strong>themes：/// - 系统主题文件夹</strong></li>
+<li><strong>查看本地所有的tpc，udp监听端口： netstat -tupln (t=tcp， u=udp， p=program， l=listen， n=numric)</strong></li>
+<li><strong>通过man搜说相关命令： man -k keyword 、 eg： man -k user</strong></li>
+<li><strong>统计文件所占用的实际磁盘空间： du (du - estimate file space usage)</strong></li>
+<li><strong>统计文件中的字符，字节数： wc -c/-l/-w (wc - print the number of newlines， words， and bytes in files)</strong></li>
+<li><strong>快速重启X服务： 同时按下： Alt + Ctrl + Backspace 三个键</strong></li>
+<li><strong>打开”运行”窗口： 同时按下 Alt + F2 键</strong></li>
+<li><strong>全屏：直接按下 PrtScr 键</strong></li>
+<li><strong>当前窗口：同时按下 Alt + PrtScr 键</strong></li>
+<li><strong>延时截屏：在 终端 或 “运行”窗口中输入命令： gnome-screenshot –delay 3 ，将延时 3 秒后截屏</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>命令</tag>
       </tags>
   </entry>
 </search>
