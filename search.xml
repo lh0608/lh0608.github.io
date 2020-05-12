@@ -719,32 +719,6 @@ npm install less-loader
       </tags>
   </entry>
   <entry>
-    <title>MD5</title>
-    <url>/2020/05/06/MD5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
-<li><strong>1991年，Rivest开发出技术上更为趋近成熟的MD5<a href="https://baike.baidu.com/item/算法" target="_blank" rel="noopener">算法</a></strong></li>
-<li><strong>它在MD4的基础上增加了”安全带”的概念</strong></li>
-<li><strong>虽然MD5比MD4复杂度大一些，但却更为安全</strong></li>
-</ul>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul>
-<li><strong>MD5码以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位<a href="https://baike.baidu.com/item/散列值/10398613" target="_blank" rel="noopener">散列值</a></strong></li>
-</ul>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
-<li><strong>用于密码管理</strong></li>
-<li><strong>电子签名</strong></li>
-<li><strong>垃圾邮件筛选</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># md5加密</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">password_encrypt</span><span class="params">(pwd)</span>:</span></span><br><span class="line">    <span class="comment"># 实例化md5()方法</span></span><br><span class="line">    md5 = hashlib.md5()</span><br><span class="line">    <span class="comment"># 转码</span></span><br><span class="line">    password_utf8 = str(pwd).encode(encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="comment"># 加密</span></span><br><span class="line">    md5.update(password_utf8)</span><br><span class="line">    <span class="comment"># 返回密文</span></span><br><span class="line">    <span class="keyword">return</span> md5.hexdigest()</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>MD5</category>
-      </categories>
-      <tags>
-        <tag>加密</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL自动启动本地服务</title>
     <url>/2020/05/05/MySQL%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</url>
     <content><![CDATA[<p>tags: </p>
@@ -1017,32 +991,6 @@ npm install less-loader
       </categories>
       <tags>
         <tag>初识python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>验证码</title>
-    <url>/2020/05/07/%E9%AA%8C%E8%AF%81%E7%A0%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line"><span class="comment"># 绘画库</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageDraw</span><br><span class="line"><span class="comment"># 字体库</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageFont</span><br><span class="line"><span class="comment"># 图片库</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 随机库</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="comment"># 文件流</span></span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义验证码</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCode</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="comment"># 定义随机验证码颜色</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_random_color</span><span class="params">(self)</span>:</span></span><br><span class="line">        R = random.randrange(<span class="number">255</span>)</span><br><span class="line">        G = random.randrange(<span class="number">255</span>)</span><br><span class="line">        B = random.randrange(<span class="number">255</span>)</span><br><span class="line">        <span class="keyword">return</span> (R, G, B)</span><br><span class="line">    <span class="comment"># 随机验证码</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="comment"># 画布</span></span><br><span class="line">        img_size = (<span class="number">110</span>, <span class="number">50</span>)</span><br><span class="line">        <span class="comment"># 定义颜色类型</span></span><br><span class="line">        image = Image.new(<span class="string">'RGB'</span>, img_size, <span class="string">'white'</span>)</span><br><span class="line">        <span class="comment"># 画笔</span></span><br><span class="line">        draw = ImageDraw.Draw(image, <span class="string">'RGB'</span>)</span><br><span class="line">        <span class="comment"># 定义随机字符串</span></span><br><span class="line">        source = <span class="string">'0123456789'</span></span><br><span class="line">        <span class="comment"># 定义容器，接收随机字符串</span></span><br><span class="line">        code_str = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            <span class="comment"># 获取字体颜色</span></span><br><span class="line">            text_color = self.get_random_color()</span><br><span class="line">            <span class="comment"># 获取字符串</span></span><br><span class="line">            tmp_num = random.randrange(len(source))</span><br><span class="line">            <span class="comment"># 获取字符集</span></span><br><span class="line">            random_str = source[tmp_num]</span><br><span class="line">            <span class="comment"># 添加到容器</span></span><br><span class="line">            code_str += random_str</span><br><span class="line">            <span class="comment"># 绘制</span></span><br><span class="line">            draw.text((<span class="number">10</span>+<span class="number">30</span>*i, <span class="number">20</span>), random_str, text_color)</span><br><span class="line">        <span class="comment"># 文件流缓冲区</span></span><br><span class="line">        buf = io.BytesIO()</span><br><span class="line">        <span class="comment"># 将图片保存到缓冲区</span></span><br><span class="line">        image.save(buf, <span class="string">'png'</span>)</span><br><span class="line">        <span class="comment"># 将随机码存储到session中</span></span><br><span class="line">        request.session[<span class="string">'code'</span>] = code_str</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(buf.getbuffer(), <span class="string">'image/png'</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Django</category>
-      </categories>
-      <tags>
-        <tag>验证码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分页</title>
-    <url>/2020/05/07/%E5%88%86%E9%A1%B5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 分页</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewsList</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="comment"># 获取当前页</span></span><br><span class="line">        page = request.GET.get(<span class="string">'page'</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 获取每页的条数</span></span><br><span class="line">        size = request.GET.get(<span class="string">'size'</span>, <span class="number">2</span>)</span><br><span class="line">        <span class="comment"># 开始 当前页减一 乘以 页码</span></span><br><span class="line">        data_start = (int(page - <span class="number">1</span>) * int(size))</span><br><span class="line">        <span class="comment"># 结束 当前页 乘以 页码</span></span><br><span class="line">        data_end = int(page) * int(size)</span><br><span class="line">        <span class="comment"># 获取所有新闻利用切片分页</span></span><br><span class="line">        news_list = News.objects.all()[data_start:data_end]</span><br><span class="line">        <span class="comment"># 返回数据总条数</span></span><br><span class="line">        count = News.objects.count()</span><br><span class="line">        <span class="comment"># 序例化</span></span><br><span class="line">        news_ser = NewsSer(news_list, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># 返回</span></span><br><span class="line">        <span class="keyword">return</span> Response(&#123;</span><br><span class="line">            <span class="string">'total'</span>: count,</span><br><span class="line">            <span class="string">'datalist'</span>: news_ser.data</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Django</category>
-      </categories>
-      <tags>
-        <tag>分页</tag>
       </tags>
   </entry>
   <entry>
@@ -1384,5 +1332,88 @@ npm install less-loader
     <title>Vue上传文件（方法二）</title>
     <url>/2020/05/11/Vue%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%88%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">      上传图片：&lt;input type=<span class="string">"file"</span> id=<span class="string">"img"</span>&gt;</span><br><span class="line">      &lt;button @click=<span class="string">"submit"</span>&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">    data() &#123;</span></span><br><span class="line"><span class="regexp">        return &#123;</span></span><br><span class="line"><span class="regexp">            </span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 自定义方法</span></span><br><span class="line"><span class="regexp">    methods: &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义提交事件</span></span><br><span class="line"><span class="regexp">        submit() &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 实例化对象</span></span><br><span class="line"><span class="regexp">            var formdata = new FormData();</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 获取输入框id</span></span><br><span class="line"><span class="regexp">            let img = document.getElementById('img').files[0];</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 'img'与数据库字段一致 文件实体</span></span><br><span class="line"><span class="regexp">            formdata.append('img', img);</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ 请求后台接口</span></span><br><span class="line"><span class="regexp">            this.axios.post('http:/</span><span class="regexp">/localhost:8000/u</span>pload/<span class="string">', (formdata)).then(response=&gt;&#123;</span></span><br><span class="line"><span class="string">                // 打印控制台</span></span><br><span class="line"><span class="string">                console.log(response);</span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;style&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>Django分页</title>
+    <url>/2020/05/07/Django%E5%88%86%E9%A1%B5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 分页</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewsList</span><span class="params">(APIView)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="comment"># 获取当前页</span></span><br><span class="line">        page = request.GET.get(<span class="string">'page'</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 获取每页的条数</span></span><br><span class="line">        size = request.GET.get(<span class="string">'size'</span>, <span class="number">2</span>)</span><br><span class="line">        <span class="comment"># 开始 当前页减一 乘以 页码</span></span><br><span class="line">        data_start = (int(page - <span class="number">1</span>) * int(size))</span><br><span class="line">        <span class="comment"># 结束 当前页 乘以 页码</span></span><br><span class="line">        data_end = int(page) * int(size)</span><br><span class="line">        <span class="comment"># 获取所有新闻利用切片分页</span></span><br><span class="line">        news_list = News.objects.all()[data_start:data_end]</span><br><span class="line">        <span class="comment"># 返回数据总条数</span></span><br><span class="line">        count = News.objects.count()</span><br><span class="line">        <span class="comment"># 序例化</span></span><br><span class="line">        news_ser = NewsSer(news_list, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># 返回</span></span><br><span class="line">        <span class="keyword">return</span> Response(&#123;</span><br><span class="line">            <span class="string">'total'</span>: count,</span><br><span class="line">            <span class="string">'datalist'</span>: news_ser.data</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>分页</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Django验证码</title>
+    <url>/2020/05/07/Django%E9%AA%8C%E8%AF%81%E7%A0%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line"><span class="comment"># 绘画库</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageDraw</span><br><span class="line"><span class="comment"># 字体库</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageFont</span><br><span class="line"><span class="comment"># 图片库</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 随机库</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="comment"># 文件流</span></span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义验证码</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCode</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="comment"># 定义随机验证码颜色</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_random_color</span><span class="params">(self)</span>:</span></span><br><span class="line">        R = random.randrange(<span class="number">255</span>)</span><br><span class="line">        G = random.randrange(<span class="number">255</span>)</span><br><span class="line">        B = random.randrange(<span class="number">255</span>)</span><br><span class="line">        <span class="keyword">return</span> (R, G, B)</span><br><span class="line">    <span class="comment"># 随机验证码</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        <span class="comment"># 画布</span></span><br><span class="line">        img_size = (<span class="number">110</span>, <span class="number">50</span>)</span><br><span class="line">        <span class="comment"># 定义颜色类型</span></span><br><span class="line">        image = Image.new(<span class="string">'RGB'</span>, img_size, <span class="string">'white'</span>)</span><br><span class="line">        <span class="comment"># 画笔</span></span><br><span class="line">        draw = ImageDraw.Draw(image, <span class="string">'RGB'</span>)</span><br><span class="line">        <span class="comment"># 定义随机字符串</span></span><br><span class="line">        source = <span class="string">'0123456789'</span></span><br><span class="line">        <span class="comment"># 定义容器，接收随机字符串</span></span><br><span class="line">        code_str = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            <span class="comment"># 获取字体颜色</span></span><br><span class="line">            text_color = self.get_random_color()</span><br><span class="line">            <span class="comment"># 获取字符串</span></span><br><span class="line">            tmp_num = random.randrange(len(source))</span><br><span class="line">            <span class="comment"># 获取字符集</span></span><br><span class="line">            random_str = source[tmp_num]</span><br><span class="line">            <span class="comment"># 添加到容器</span></span><br><span class="line">            code_str += random_str</span><br><span class="line">            <span class="comment"># 绘制</span></span><br><span class="line">            draw.text((<span class="number">10</span>+<span class="number">30</span>*i, <span class="number">20</span>), random_str, text_color)</span><br><span class="line">        <span class="comment"># 文件流缓冲区</span></span><br><span class="line">        buf = io.BytesIO()</span><br><span class="line">        <span class="comment"># 将图片保存到缓冲区</span></span><br><span class="line">        image.save(buf, <span class="string">'png'</span>)</span><br><span class="line">        <span class="comment"># 将随机码存储到session中</span></span><br><span class="line">        request.session[<span class="string">'code'</span>] = code_str</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(buf.getbuffer(), <span class="string">'image/png'</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>验证码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MD5加密</title>
+    <url>/2020/05/06/MD5%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<li><strong>1991年，Rivest开发出技术上更为趋近成熟的MD5<a href="https://baike.baidu.com/item/算法" target="_blank" rel="noopener">算法</a></strong></li>
+<li><strong>它在MD4的基础上增加了”安全带”的概念</strong></li>
+<li><strong>虽然MD5比MD4复杂度大一些，但却更为安全</strong></li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul>
+<li><strong>MD5码以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位<a href="https://baike.baidu.com/item/散列值/10398613" target="_blank" rel="noopener">散列值</a></strong></li>
+</ul>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li><strong>用于密码管理</strong></li>
+<li><strong>电子签名</strong></li>
+<li><strong>垃圾邮件筛选</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># md5加密</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">password_encrypt</span><span class="params">(pwd)</span>:</span></span><br><span class="line">    <span class="comment"># 实例化md5()方法</span></span><br><span class="line">    md5 = hashlib.md5()</span><br><span class="line">    <span class="comment"># 转码</span></span><br><span class="line">    password_utf8 = str(pwd).encode(encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="comment"># 加密</span></span><br><span class="line">    md5.update(password_utf8)</span><br><span class="line">    <span class="comment"># 返回密文</span></span><br><span class="line">    <span class="keyword">return</span> md5.hexdigest()</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>MD5</category>
+      </categories>
+      <tags>
+        <tag>加密</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue国际化</title>
+    <url>/2020/05/12/Vue%E5%9B%BD%E9%99%85%E5%8C%96/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li><p><strong>首先在项目根目录安装国际化</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>在src文件下创建—&gt;lang文件夹—&gt;接着创建en.js、zh.js文件，代码如下：</strong></p>
+<ul>
+<li><p><strong>en.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//双语规范的变量（English）</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> m = &#123;</span><br><span class="line">  <span class="comment">//定义English语言</span></span><br><span class="line">  <span class="string">'home'</span>: <span class="string">'home'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>zh.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//双语规范的变量（简体中文）</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> m = &#123;</span><br><span class="line">  <span class="comment">//定义简体中文语言</span></span><br><span class="line">  <span class="string">'home'</span>: <span class="string">'主页'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>打开src—&gt;main.js，代码如下：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入国际化</span></span><br><span class="line"><span class="keyword">import</span> VueI18n <span class="keyword">from</span> <span class="string">'vue-i18n'</span>;</span><br><span class="line"><span class="comment">// 国际化注册</span></span><br><span class="line">Vue.use(VueI18n);</span><br><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="keyword">new</span> VueI18n(&#123;</span><br><span class="line">  <span class="comment">// 定义默认语言为中文</span></span><br><span class="line">  locale: <span class="string">'zh'</span>,</span><br><span class="line">  <span class="comment">// 语言包声明</span></span><br><span class="line">  messages: &#123;</span><br><span class="line">    <span class="string">'zh'</span>: <span class="built_in">require</span>(<span class="string">'./lang/zh'</span>),</span><br><span class="line">    <span class="string">'en'</span>: <span class="built_in">require</span>(<span class="string">'./lang/en'</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  i18n,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>打开src—&gt;components—&gt;新建.vue文件，代码如下：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;&#123;$t(<span class="string">'m.home'</span>)&#125;&#125;</span><br><span class="line">    &lt;!-- 这里用的是HeyUI标签，具体可以看官方文档！ --&gt;</span><br><span class="line">    &lt;HSwitch @change=<span class="string">"lang_change"</span> v-model=<span class="string">"lang"</span> :small=<span class="string">'true'</span>&gt;中/英&lt;<span class="regexp">/HSwitch&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  data() &#123;</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      /</span><span class="regexp">/ 定义语言开关变量</span></span><br><span class="line"><span class="regexp">      lang: 0</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  /</span><span class="regexp">/ 自定义方法</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 提交事件</span></span><br><span class="line"><span class="regexp">    lang_change() &#123;</span></span><br><span class="line"><span class="regexp">      if (this.lang === true) &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ lang为true显示English</span></span><br><span class="line"><span class="regexp">        this.$i18n.locale = 'en';</span></span><br><span class="line"><span class="regexp">      &#125; else &#123;</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 否则显示简体中文</span></span><br><span class="line"><span class="regexp">        this.$i18n.locale = 'zh'</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>国际化</tag>
+      </tags>
   </entry>
 </search>
